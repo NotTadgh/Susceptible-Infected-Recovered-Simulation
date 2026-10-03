@@ -1,11 +1,12 @@
 # Susceptible-Infected-Recovered* Simulation
 
+This program simulates infection spread from given values
+
 ## Dependencies
 
 python 3.x
-matplotlib
 
-This program simulates infection spread from given values
+matplotlib
 
 ## How it works
 
