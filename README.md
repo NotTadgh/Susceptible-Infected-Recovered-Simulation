@@ -24,21 +24,21 @@ Generations to run: 10
 
 ## Output (Simplified)
 ```
-------------
-Generation: 10
+---------------
+Generation: 1
 Infected: 2003
 Healthy: 7997
 Remainder: 0.20000000000004547
-------------
+---------------
 
 ...
 
-------------
-Generation: 1
+---------------
+Generation: 10
 Infected: 8927
 Healthy: 1073
 Remainder: 4.547473508864641e-13
-------------
+---------------
 ```
 ## Known limitations
 
