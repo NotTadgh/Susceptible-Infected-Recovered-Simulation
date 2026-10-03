@@ -1,12 +1,17 @@
 # Susceptible-Infected-Recovered* Simulation
 
+## Dependencies
+
+python 3.x
+matplotlib
+
 This program simulates infection spread from given values
 
 ## How it works
 
-Each generation a number of the healthy population becomes infected determined on the infection_rate input.
+Each generation a number of the healthy population becomes infected determined by the `infection_rate` input
 
-The program tracks the remainder of infections in a remainder variable while displaying whole numbers, if remainder >= 1, infected += 1 and remainder -= 1.
+The program tracks the remainder of infections in a remainder variable while displaying whole numbers, `if remainder >= 1`, `infected += 1` and `remainder -= 1`
 
 ## Inputs
 ```
@@ -36,11 +41,18 @@ Remainder: 4.547473508864641e-13
 ```
 ## Known limitations
 
-R / Recovered not yet implemented, no function for infected to recover to healthy is in place, therefor more accurately this is a (SI) simulation.
+R / Recovered not yet implemented, no function for infected to recover to healthy is in place, therefore more accurately this is a (SI) simulation.
 
 This program assumes infection rate is between 0-100
 
 ## Planned Updates
 Add "Recovered" variable to complete a full (SIR) model
 
-Add infected over time chart
+
+## Change Log
+
+Changed `infection_rate` from `int` to `float`
+
+Added infection plotting using matplotlib
+
+Changed how generations are printed, now 1-n, previously of n-1
