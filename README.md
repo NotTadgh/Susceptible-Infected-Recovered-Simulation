@@ -1,6 +1,9 @@
-# Susceptible-Infected-Recovered* Simulation
+# Susceptible-Infected-Recovered Simulation
 
-This program simulates infection spread from given values
+This program simulates infection spread in a population from given values
+
+## Credits
+https://en.wikipedia.org/wiki/Compartmental_models_(epidemiology)
 
 ## Dependencies
 
@@ -8,52 +11,73 @@ python 3.x
 
 matplotlib
 
-## How it works
+## How It Works
 
-Each generation a number of the healthy population becomes infected determined by the `infection_rate` input
+Each generation a number of the susceptible becomes infected determined by the `infection_rate` input
 
-The program tracks the remainder of infections in a remainder variable while displaying whole numbers, `if remainder >= 1`, `infected += 1` and `remainder -= 1`
+The program tracks the remainder of infections and recoveries in a remainder variable while displaying whole numbers, `if remainder >= 1`, `infected += 1` and `remainder -= 1`
 
 ## Inputs
 ```
-Population: 10000
-Infection Rate: 20
-Infected Start: 4
-Generations to run: 10
+Population: 1000000
+Infected Start: 1
+Infection Rate %: 3
+Recovery Rate %: 10
+Generations to run: 100
 ```
 
 ## Output (Simplified)
 ```
 ---------------
-Generation: 1
-Infected: 2003
-Healthy: 7997
-Remainder: 0.20000000000004547
+Generation: 0
+Susceptible:  1000000
+Infected:  1
+Recovered: 0
+Infected Remainder: 0
+Recovered Remainder: 0
 ---------------
 
 ...
 
 ---------------
-Generation: 10
-Infected: 8927
-Healthy: 1073
-Remainder: 4.547473508864641e-13
+Generation: 100
+Susceptible: 47537
+Infected: 20363
+Recovered: 932100
+Infected Remainder: 0.6999999997708528
+Recovered Remainder: 0.5188284182732787
 ---------------
+
 ```
-## Known limitations
 
-R / Recovered not yet implemented, no function for infected to recover to healthy is in place, therefore more accurately this is a (SI) simulation.
+![Susceptible-Infected-Recovered Simulation](images/Susceptible-Infected-Recovered_Simulation.png)
 
-This program assumes infection rate is between 0-100
+## Known limitations / Assumptions
+
+Simulation has a closed population without births or deaths
+
+Assumes infection rate is between 0-100%
+
+Assumes population is homogeneous 
+
 
 ## Planned Updates
-Add "Recovered" variable to complete a full (SIR) model
+
+Replace internal calculations with a genuine SIR infection equation
 
 
 ## Change Log
 
-Changed `infection_rate` from `int` to `float`
+Added Recovered population
 
-Added infection plotting using matplotlib
+Added recovery calculations
 
-Changed how generations are printed, now 1-n, previously of n-1
+Added decimal carry over for recoveries
+
+Added `Susceptible`  and  `Recovered` to graph
+
+Added Recovery rate input   
+
+Generations now print from Generation 0, displaying the original population state
+
+Renamed `healthy`to `susceptible`
